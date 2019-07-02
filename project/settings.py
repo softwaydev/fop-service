@@ -79,9 +79,12 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
-            'request_id': {
-                '()': 'log_request_id.filters.RequestIDFilter'
-            }
+        'request_id': {
+            '()': 'log_request_id.filters.RequestIDFilter'
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
     },
     'formatters': {
             'json': {
