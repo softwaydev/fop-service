@@ -15,7 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'raven.contrib.django.raven_compat',
 
     'core',
 ]
@@ -98,15 +97,10 @@ LOGGING = {
             'formatter': 'json',
             'filters': ['request_id']
         },
-        'sentry': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false', ],
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-        },
     },
     'loggers': {
         '': {
-            'handlers': ['console', 'sentry'],
+            'handlers': ['console',],
             'level': 'INFO',
             'propagate': True,
         },
